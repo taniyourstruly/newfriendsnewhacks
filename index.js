@@ -1,34 +1,63 @@
+//checks if browser is compatible with service worker and Push API for notifications
 const check = () => {
   if (!('serviceWorker' in navigator)) {
-    throw new Error('No Service Worker support!')
+    return
   }
   if (!('PushManager' in window)) {
-    throw new Error('No Push API Support!')
+    return
   }
 }
 
-//create ServiceWorker for remote notifications
-const registerServiceWorker = async () => {
-  const swRegistration = await navigator.serviceWorker.register('service.js')
-  return swRegistration
+//registers service worker
+//tells the browser where our service worker file is (service.js)
+function registerServiceWorker() {
+  return navigator.serviceWorker.register('service.js')
+  .then(function(registration) {
+    console.log('Service worker successfully registered.');
+    return registration;
+  })
+  .catch(function(err) {
+    console.error('Unable to register service worker.', err);
+  });
 }
 
-//requesting permission for sending users notifications
+//requests permission for notifications from the user and can be default, granted, or denied
 const requestNotificationPermission = async () => {
   const permission = await window.Notification.requestPermission()
-  // value of permission can be 'granted', 'default', 'denied'
-  // granted: user has accepted the request
-  // default: user has dismissed the notification permission popup by clicking on x
-  // denied: user has denied the request.
   if (permission !== 'granted') {
     throw new Error('Permission not granted for Notification')
   }
 }
 
-//run the two functions
-const main = async () => {
-  check()
-  const swRegistration = await registerServiceWorker()
-  const permission = await requestNotificationPermission()
+//push event in service worker
+self.addEventListener("push", function(event) {
+  if (event.data) {
+    console.log("Push event!! ", event.data.text());
+    showLocalNotification("New Notifs", event.data.text(), self.registration);
+  } else {
+    console.log("Push event but no data");
+  }
+});
+
+//this shows the actual notification
+const showLocalNotification = (title, body, swRegistration) => {
+    //let title = 'Task in progress';
+    const options = {
+        body,
+        //figure out icon later
+        icon: 'uploads\icon.png'
+        // here you can add more properties like icon, image, vibrate, etc.
+    };
+    swRegistration.showNotification(title, options);
 }
-// main(); we will not call main in the beginning.
+
+//runs all of the functions!
+const main = async () => {
+    check();
+    const swRegistration = await registerServiceWorker();
+    const permission =  await requestNotificationPermission();
+    //change this so the message changes
+    showLocalNotification("this is a title", "this is a message", swRegistration);
+}
+
+main(); 
