@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Editor's Dependecy Style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <!-- Editor's Style -->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <!-- logo font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/img/logo.svg" />
+    <title>To-Do App</title>
+    <style>
+      nav {
+        background-color: #bfe1f6;
+      }
+
+      body {
+        background-color: #ffffed;
+      }
+
+      .xyz {
+        color: #000000;
+      }
+    </style>
+      <!-- date picker -->
+      <title>jQuery UI Datepicker - Display button bar</title>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+            $( function() {
+                $( "#datepicker" ).datepicker({
+                showButtonPanel: true
+            });
+        } );
+  </script>
+
+  </head>
+  <body>
+    <div>
+    <header>
+      <nav class="nav-wrapper">
+        <div class="container">
+          <ul>
+            <li>
+              <a
+                href="/"
+                class="brand-logo xyz"
+                style="font-family: 'Dancing Script', cursive"
+                color="#000000"
+                >To-Do Application</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+     <i class="material-icons">add</i>
+
+    <div class="container">
+      <h1
+          href="/"
+                class="brand-logo xyz"
+                style="font-family: 'Dancing Script', cursive"
+                color="#000000">Add a task.</h1>
+      <div class="row">
+          <!-- Form for task details -->
+    <form class="col s12">
+      <div class="row">
+            <div class="input-field col s12">
+                <input id="title" type="text" class="validate">
+            <label class="active" for="title">Title</label>
+            </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="notes" type="text" class="validate">
+          <label class="active" for="notes">Description:</label>
+        </div>
+      </div> 
+    <label for="party">Enter a date and time:</label>
+    <input id="party" type="datetime-local" name="partydate">
+    </form>
+    <style>
+        .button {
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+        }
+        
+        .blue{background-color: #008CBA;} /* Blue */
+    </style>
+    <button class="button blue">Add</button>
+      </div>
+        <div class="col l12 offset-l2"></div>
+      </div>
+    </div>
+  </body>
+</html>
