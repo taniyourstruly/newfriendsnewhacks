@@ -28,8 +28,12 @@ function createTask(){
     taskList.push(new Task(title, info, hours, minutes, month, day, year)); 
 }
 
-function actionTime(task){
+function actionTime(){
+    let task = taskList[0];
     let current = new Date();
+    if(taskList.length === 0){
+        return false;
+    }
     if(current.getFullYear() ===  task.year && current.getMonth() === task.month && current.getDate === task.day){
         let diff = (current.getHours()*60 + current.getMinutes()) - (task.hours*60 + task.minutes);
         if(diff === 30 ){
@@ -57,3 +61,7 @@ function sortTaskList(){
     });
 }
 
+function onClickAdd(){
+    createTask();
+    sortTaskList();
+}

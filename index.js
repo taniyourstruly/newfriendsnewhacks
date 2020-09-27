@@ -53,11 +53,15 @@ const showLocalNotification = (title, body, swRegistration) => {
 
 //runs all of the functions!
 const main = async () => {
-    check();
-    const swRegistration = await registerServiceWorker();
-    const permission =  await requestNotificationPermission();
-    //change this so the message changes
-    showLocalNotification("this is a title", "this is a message", swRegistration);
+  onClickAdd()
+  check()
+  const swRegistration = await registerServiceWorker();
+  const permission =  await requestNotificationPermission();
+  //change this so the message changes
+    if(actionTime()){
+      showLocalNotification("this is a title", "this is a message", swRegistration);
+      taskList.shift();
+    }
 }
 
 main(); 
