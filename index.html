@@ -45,10 +45,6 @@
       body {
         background-color: #ffffed;
       }
-
-      .xyz {
-        color: #000000;
-      }
     </style>
   </head>
   <body>
@@ -71,10 +67,51 @@
     </header>
 
     <div class="container">
-      <h1>Hello World</h1>
+      <div class="center">
+        <h4 class="" style="font-family: 'Dancing Script', cursive">
+          Add a task
+        </h4>
+      </div>
+
       <div class="row">
-        <div class="col l12 offset-l2"></div>
+        <div class="col offset-l3">
+          <form action="">
+            <div class="input-field col l12">
+              <input type="text" autocomplete="off" required />
+              <label for="name">Title</label>
+            </div>
+            <div class="input-field col l12">
+              <input type="text" autocomplete="off" required />
+              <label for="name">Description</label>
+            </div>
+            <div class="col l12">
+              <label for="party">Enter a date and time:</label>
+              <input id="party" type="datetime-local" name="partydate" />
+              <br />
+            </div>
+            <br />
+            <div class="right-align">
+              <br />
+              <button class="btn" type="submit">Add</button>
+              <button class="btn">
+                <i class="material-icons right">notifications_active</i>Enable
+                Notification
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // $(".timepicker").timepicker();
+        // $(".datepicker").datepicker({
+        // disableWeekends: true,
+        // });
+      });
+    </script>
   </body>
 </html>
