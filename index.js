@@ -59,7 +59,7 @@ const main = async () => {
   const permission =  await requestNotificationPermission();
   //change this so the message changes
     if(actionTime()){
-      showLocalNotification("this is a title", "this is a message", swRegistration);
+      showLocalNotification(taskList[0], taskList[0], swRegistration);
       taskList.shift();
     }
 }
