@@ -77,11 +77,11 @@
         <div class="col offset-l2">
           <form action="">
             <div class="input-field col l12">
-              <input type="text" autocomplete="off" required />
+              <input id="title" type="text" autocomplete="off" required />
               <label for="name">Title</label>
             </div>
             <div class="input-field col l12">
-              <input type="text" autocomplete="off" required />
+              <input id="notes" type="text" autocomplete="off" required />
               <label for="name">Description</label>
             </div>
             <div class="col l12">
@@ -92,7 +92,7 @@
             <br />
             <div class="right-align">
               <br />
-              <button id = "Add"  onclick = "main()" class="btn" type="submit">Add</button>
+              <button id = "Add"  onclick = "onClickAdd()" class="btn">Add</button>
               <button class="btn">
                 <i class="material-icons right">notifications_active</i>Enable
                 Notification
@@ -114,6 +114,7 @@
         // disableWeekends: true,
         // });
       });
+
     </script>
   </body>
 </html>

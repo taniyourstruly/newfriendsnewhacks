@@ -53,8 +53,7 @@ const showLocalNotification = (title, body, swRegistration) => {
 
 //runs all of the functions!
 const main = async () => {
-  onClickAdd()
-  check()
+  check();
   const swRegistration = await registerServiceWorker();
   const permission =  await requestNotificationPermission();
   //change this so the message changes
@@ -64,4 +63,4 @@ const main = async () => {
     }
 }
 
-main(); 
+main();
