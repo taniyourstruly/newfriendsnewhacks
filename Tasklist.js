@@ -39,8 +39,8 @@ function actionTime(task){
     return false;
 }
 
-function sortTaskList(taskList){
-    let sortList = taskList.sort(function(a,b){
+function sortTaskList(){
+    taskList.sort(function(a,b){
         if(a.year === b.year){
             if(a.month === b.month){
                 if(a.day === b.day){
@@ -55,6 +55,5 @@ function sortTaskList(taskList){
         }
         return a.year - b.year;
     });
-    return sortList;
 }
 
