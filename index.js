@@ -39,28 +39,17 @@ self.addEventListener("push", function(event) {
   }
 });
 
-//this shows the actual notification
 const showLocalNotification = (title, body, swRegistration) => {
-    //let title = 'Task in progress';
     const options = {
         body,
-        //figure out icon later
-        icon: 'uploads\icon.png'
         // here you can add more properties like icon, image, vibrate, etc.
     };
     swRegistration.showNotification(title, options);
 }
-
-//runs all of the functions!
 const main = async () => {
-  check();
-  const swRegistration = await registerServiceWorker();
-  const permission =  await requestNotificationPermission();
-  //change this so the message changes
-    if(actionTime()){
-      showLocalNotification(taskList[0], taskList[0], swRegistration);
-      taskList.shift();
-    }
+    check();
+    const swRegistration = await registerServiceWorker();
+    const permission =  await requestNotificationPermission();
+    showLocalNotification('Task', 'Task Description', swRegistration);
 }
-
 main();
