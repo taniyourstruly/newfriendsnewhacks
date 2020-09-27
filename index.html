@@ -1,18 +1,120 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--This will be replaced with the official name-->
-    <title>Push Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Editor's Dependecy Style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <!-- Editor's Style -->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <!-- logo font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/img/logo.svg" />
+    <title>To-Do App</title>
+    <style>
+      nav {
+        background-color: #bfe1f6;
+      }
+
+      body {
+        background-color: #ffffed;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-wrapper">
+        <div class="container">
+          <ul>
+            <li>
+              <a
+                href="/"
+                class="brand-logo xyz"
+                style="font-family: 'Dancing Script', cursive"
+                color="#000000"
+                >To-Do Application</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="center">
+        <h4 class="" style="font-family: 'Dancing Script', cursive">
+          Add a task
+        </h4>
+      </div>
+
+      <div class="row">
+        <div class="col offset-l2">
+          <form action="">
+            <div class="input-field col l12">
+              <input type="text" autocomplete="off" required />
+              <label for="name">Title</label>
+            </div>
+            <div class="input-field col l12">
+              <input type="text" autocomplete="off" required />
+              <label for="name">Description</label>
+            </div>
+            <div class="col l12">
+              <label for="party">Enter a date and time:</label>
+              <input id="party" type="datetime-local" name="partydate" />
+              <br />
+            </div>
+            <br />
+            <div class="right-align">
+              <br />
+              <button class="btn" type="submit">Add</button>
+              <button class="btn">
+                <i class="material-icons right">notifications_active</i>Enable
+                Notification
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="index.js"></script>
     <script src="Tasklist.js"></script>
-</head>
-<body>
-	<!--This will be replaced with the main html file later on, including changing the button-->
-    <h1>Hello World</h1>
-    <button id="permission-btn" onclick="main()">Ask Permission</button>
-</body>
+    <script>
+      $(document).ready(function () {
+        // $(".timepicker").timepicker();
+        // $(".datepicker").datepicker({
+        // disableWeekends: true,
+        // });
+      });
+    </script>
+  </body>
 </html>
+
