@@ -25,16 +25,7 @@ function createTask(){
     let hours = Number(date.substring(11, 13));
     let minutes = Number(date.substring(14));
 
-    alert(title);
-    alert(info);
-    alert(date);
-    alert(month);
-    alert(day);
-    alert(minutes);
-
     let newTask = new Task(title, info, hours, minutes, month, day, year)
-
-    alert(newTask);
 
     taskList.push(newTask); 
 }
